@@ -12,7 +12,7 @@ export type C = A & B & { id: number };
 
 With the plugin, type `C` will expand to the following definition in your docs.
 
-```ts};
+```ts
 export type C = {
   name: string;
   age: number;
