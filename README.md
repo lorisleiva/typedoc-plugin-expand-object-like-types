@@ -5,17 +5,17 @@ A Typedoc plugin that expands TS definitions for object-like types.
 Take the following example.
 
 ```ts
-export type A = { name: string };
+export type A = { name: string; email: string };
 export type B = { age: number };
-export type C = A & B & { id: number };
+export type C = Omit<A, 'email'> & Partial<B> & { id: number };
 ```
 
-With the plugin, type `C` will expand to the following definition in your docs.
+With this plugin, type `C` will expand to the following definition in your docs.
 
 ```ts
 export type C = {
   name: string;
-  age: number;
+  age?: number;
   id: number;
 };
 ```
