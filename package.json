@@ -1,0 +1,35 @@
+{
+  "name": "typedoc-plugin-expand-object-like-types",
+  "version": "0.1.0",
+  "description": "Expands TS definitions of object-like types",
+  "main": "./index.js",
+  "exports": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.10",
+    "prettier": "^2.7.1",
+    "typedoc": "^0.23.25",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "typedoc": "0.22.x || 0.23.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorisleiva/typedoc-plugin-expand-object-like-types.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "typedoc-plugin"
+  ],
+  "author": "Loris Leiva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lorisleiva/typedoc-plugin-expand-object-like-types/issues"
+  },
+  "homepage": "https://github.com/lorisleiva/typedoc-plugin-expand-object-like-types#readme"
+}
