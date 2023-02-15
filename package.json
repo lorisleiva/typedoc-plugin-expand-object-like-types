@@ -31,5 +31,6 @@
   "bugs": {
     "url": "https://github.com/lorisleiva/typedoc-plugin-expand-object-like-types/issues"
   },
-  "homepage": "https://github.com/lorisleiva/typedoc-plugin-expand-object-like-types#readme"
+  "homepage": "https://github.com/lorisleiva/typedoc-plugin-expand-object-like-types#readme",
+  "packageManager": "pnpm@7.18.1"
 }
