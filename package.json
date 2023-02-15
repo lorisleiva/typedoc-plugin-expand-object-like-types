@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-expand-object-like-types",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Expands TS definitions of object-like types",
   "main": "./index.js",
   "exports": "./index.js",

@@ -4,7 +4,9 @@ const td = require("typedoc");
 exports.load = function (app) {
   app.converter.on(
     td.Converter.EVENT_CREATE_DECLARATION,
-    expandObjectLikeTypes
+    function (context, reflection) {
+      expandObjectLikeTypes(context, reflection, app);
+    }
   );
 };
 
@@ -17,11 +19,13 @@ const TYPES_TO_EXPAND = ["mapped", "intersection", "reference"];
  * @param {td.Context} context
  * @param {td.DeclarationReflection} reflection
  */
-function expandObjectLikeTypes(context, reflection) {
+function expandObjectLikeTypes(context, reflection, app) {
+  const internalModule = app.options.getValue("internalModule") || "<internal>";
   if (
     reflection.kind !== td.ReflectionKind.TypeAlias ||
     !reflection.type?.type ||
-    !TYPES_TO_EXPAND.includes(reflection.type.type)
+    !TYPES_TO_EXPAND.includes(reflection.type.type) ||
+    reflection.parent.originalName === internalModule
   )
     return;
 
