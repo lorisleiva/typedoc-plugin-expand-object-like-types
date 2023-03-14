@@ -18,9 +18,15 @@ const TYPES_TO_EXPAND = ["mapped", "intersection", "reference"];
 /**
  * @param {td.Context} context
  * @param {td.DeclarationReflection} reflection
+ * @param {td.Application} app
  */
 function expandObjectLikeTypes(context, reflection, app) {
-  const internalModule = app.options.getValue("internalModule") || "<internal>";
+  const hasInternalModule =
+    app.options.getDeclaration("internalModule") !== undefined;
+  const internalModule = hasInternalModule
+    ? app.options.getValue("internalModule") || "<internal>"
+    : "<internal>";
+
   if (
     reflection.kind !== td.ReflectionKind.TypeAlias ||
     !reflection.type?.type ||
